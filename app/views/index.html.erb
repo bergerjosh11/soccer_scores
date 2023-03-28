@@ -1,0 +1,6 @@
+<h1>Select a league:</h1>
+
+<%= form_tag(scores_path, method: 'get') do %>
+  <%= select_tag(:league_id, options_for_select(@leagues.map { |league| [league['name'], league['id']] })) %>
+  <%= submit_tag("Show scores") %>
+<% end %>

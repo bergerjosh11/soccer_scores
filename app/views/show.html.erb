@@ -1,0 +1,23 @@
+<!-- app/views/scores/show.html.erb -->
+<h1>Scores and fixtures:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Home team</th>
+      <th>Away team</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @scores.each do |score| %>
+      <tr>
+        <td><%= score['utcDate'] %></td>
+        <td><%= score['homeTeam']['name'] %></td>
+        <td><%= score['awayTeam']['name'] %></td>
+        <td><%= score['score']['fullTime']['homeTeam'] %> - <%= score['score']['fullTime']['awayTeam'] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
